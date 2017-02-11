@@ -8,6 +8,12 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
+#Use devise
+gem 'devise'
+#Use omniauth-facebook (Facebook Authentication Gem)
+gem 'omniauth-facebook'
+#Use certified gem to avoid problems with the ssl cert on localhost
+gem 'certified'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -34,6 +40,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+#Use wdm (Windows Directory Monitor)
+gem 'wdm'
+
+#Use thor downgrading
+gem 'thor', '0.19.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
