@@ -1,8 +1,100 @@
 <% if current_user.present? %>
-  Welcome !
-  <h1>Hola y <%= current_user.name %></h1>
+  <div class="col-lg-12">
+    <div class="col-lg-4">
+      <%= link_to "Busco a mi perro",'#', class: "btn btn-lg btn-danger btn-block" %>
+    </div>
+    <div class="col-lg-4">
+      <%= link_to "Encontré a mi perro",'#', class: "btn btn-lg btn-primary btn-block" %>
+    </div>
+    <div class="col-lg-4">
+      <%= link_to "Quiero ayudar",'#', class: "btn btn-lg btn-info btn-block" %>
+    </div>
+  </div>
+  
+  <h2>Hola y <%= current_user.name %></h2>
+  
+  <div class="col-lg-12">
+    <div class="col-lg-4">
+      <div class="col-lg-12">
+        Chunky
+      </div>
+      <div class="col-lg-12">
+        <%= image_tag "perritos/cachorro.jpg", :alt=>"Chunky", class: 'img-responsive img-thumbnail' %>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="col-lg-12">
+        Tunky
+      </div>
+      <div class="col-lg-12">
+        <%= image_tag "perritos/mascota.jpg", :alt=>"Chunky", class: 'img-responsive img-thumbnail' %>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="col-lg-12">
+        Lunky
+      </div>
+      <div class="col-lg-12">
+        <%= image_tag "perritos/perro-consejos-416x236x80xX.jpg", :alt=>"Chunky", class: 'img-responsive img-thumbnail' %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-lg-4">
+      <div class="col-lg-12">
+        Chunky
+      </div>
+      <div class="col-lg-12">
+        <%= image_tag "perritos/cachorro.jpg", :alt=>"Chunky", class: 'img-responsive img-thumbnail' %>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="col-lg-12">
+        Lunky
+      </div>
+      <div class="col-lg-12">
+        <%= image_tag "perritos/mascota.jpg", :alt=>"Chunky", class: 'img-responsive img-thumbnail' %>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="col-lg-12">
+        Munky
+      </div>
+      <div class="col-lg-12">
+        <%= image_tag "perritos/perro-consejos-416x236x80xX.jpg", :alt=>"Chunky", class: 'img-responsive img-thumbnail' %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-lg-4">
+      <div class="col-lg-12">
+        Chunky
+      </div>
+      <div class="col-lg-12">
+        <%= image_tag "perritos/mascota.jpg", :alt=>"Chunky", class: 'img-responsive img-thumbnail' %>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="col-lg-12">
+        Munky
+      </div>
+      <div class="col-lg-12">
+        <%= image_tag "perritos/cachorro.jpg", :alt=>"Chunky", class: 'img-responsive img-thumbnail' %>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="col-lg-12">
+        Lunky
+      </div>
+      <div class="col-lg-12">
+        <%= image_tag "perritos/perro-consejos-416x236x80xX.jpg", :alt=>"Chunky", class: 'img-responsive img-thumbnail' %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <div class="container">
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  </div>
+
 <% else %>
   <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
 <% end%>
