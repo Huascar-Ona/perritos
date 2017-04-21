@@ -12,8 +12,10 @@ gem 'rails', '~> 5.0.1'
 gem 'devise'
 #Use omniauth-facebook (Facebook Authentication Gem)
 gem 'omniauth-facebook'
-#Use certified gem to avoid problems with the ssl cert on localhost
-gem 'certified'
+#Use paperclip to manage images
+gem 'paperclip'
+#use aws-sdk 2.3 (amazon support)
+gem 'aws-sdk', '~> 2.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -41,15 +43,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#Use wdm (Windows Directory Monitor)
-gem 'wdm'
-
-#Use thor downgrading
-gem 'thor', '0.19.1'
+# Call 'byebug' anywhere in the code to stop execution and get a debugger console
+gem 'byebug'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  # # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # gem 'byebug', platform: :mri
 end
 
 group :development do
@@ -59,6 +58,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  #Use wdm (Windows Directory Monitor)
+  gem 'wdm'
+  #Use certified gem to avoid problems with the ssl cert on localhost
+  gem 'certified' 
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
