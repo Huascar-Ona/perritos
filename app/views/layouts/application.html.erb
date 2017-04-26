@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
@@ -18,7 +19,13 @@
     </nav>
     <section>
       <div class="container">
-        <%= yield %>  
+        <% if current_user.present? %>
+          <h4><%= current_user.name %></h4>
+          <%= yield %>  
+        <% else %>
+          <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+        <% end%>
+        
       </div>
     </section>
     <footer>

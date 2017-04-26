@@ -24,5 +24,5 @@ class User < ApplicationRecord
       end
     end
   end
-
+  has_many :dogs, primary_key: :id, foreign_key: :contact_id
 end
