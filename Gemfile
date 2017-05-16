@@ -16,8 +16,6 @@ gem 'omniauth-facebook'
 gem 'paperclip'
 #use aws-sdk 2.3 (amazon support)
 gem 'aws-sdk', '~> 2.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -54,6 +52,12 @@ gem 'client_side_validations'
 
 #Plugin for client_side_validations and simple_form
 gem 'client_side_validations-simple_form'
+
+#gem jqeury-upload file this is used with paperclip to make multiple uploads.
+gem 'jquery-fileupload-rails'
+
+#gem pg for postgres as the database for Active Record
+gem 'pg'
 
 group :development, :test do
   # # Call 'byebug' anywhere in the code to stop execution and get a debugger console

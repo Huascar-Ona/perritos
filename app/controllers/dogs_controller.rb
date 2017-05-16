@@ -32,26 +32,29 @@ class DogsController < ApplicationController
   def create
     @dog = Dog.new(dog_params)
     @dog.contact_id = User.select('id').where(uid: dog_params[:contact_id]).first.id
-    @dog.photos.build({image: dog_params[:image]})  
     
     respond_to do |format|
       if @dog.save
-        set_photoid
-        
+        @photo = Photo.new({image: dog_params[:image], dog_id: @dog.id})
         @dogTag = DogTag.new(dog_id: @dog.id, tag_id: dog_params[:tag_id])
         
-        if @dogTag.save
-          if Dog.where(id: @dog.id).update_all(avatar_id: @photoID)
-            format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
-            format.json { render :show, status: :created, location: @dog }
-          else
+        if @photo.save
+          if @dogTag.save
+            if Dog.where(id: @dog.id).update_all(avatar_id: @photo.id)
+              format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
+              format.json { render :show, status: :created, location: @dog }
+            else
+              format.html { render :new }
+              format.json { render json: @dog.errors, status: :unprocessable_entity }  
+            end
+          else  
             format.html { render :new }
-            format.json { render json: @dog.errors, status: :unprocessable_entity }  
-          end
-        else  
+            format.json { render json: @dogTag.errors, status: :unprocessable_entity }
+          end 
+        else
           format.html { render :new }
-          format.json { render json: @dogTag.errors, status: :unprocessable_entity }
-        end 
+          format.json { render json: @photo.errors, status: :unprocessable_entity }
+        end
       else
         format.html { render :new }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
@@ -64,7 +67,7 @@ class DogsController < ApplicationController
   def update
     respond_to do |format|
       if @dog.update(dog_params)
-        format.html { redirect_to @dog, notice: 'Dog was successfully updated.' }
+        format.html { redirect_to @dog, notice: 'Dog "' + @dog.name + '" was successfully updated.' }
         format.json { render :show, status: :ok, location: @dog }
       else
         format.html { render :edit }
@@ -78,7 +81,7 @@ class DogsController < ApplicationController
   def destroy
     @dog.destroy
     respond_to do |format|
-      format.html { redirect_to dogs_url, notice: 'Dog was successfully destroyed.' }
+      format.html { redirect_to dogs_url, notice: 'Dog "' + @dog.name + '" was successfully erased.' }
       format.json { head :no_content }
     end
   end
@@ -89,14 +92,8 @@ class DogsController < ApplicationController
       @dog = Dog.find(params[:id])
     end
 
-    def set_photoid
-      @dog.photos.each do |p|
-        @photoID = p.id
-      end
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params
-      params.require(:dog).permit(:name, :contact_id, :image, :tags, :tag_id)
+      params.require(:dog).permit(:name, :contact_id, :image, :tags, :tag_id, :latitude, :longitude, :description)
     end
 end

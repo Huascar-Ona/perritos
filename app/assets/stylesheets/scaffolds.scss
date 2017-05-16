@@ -23,8 +23,12 @@ pre {
 a {
   color: #000;
 
+  nav div &:visited {
+    color: #FFF;
+  }
+
   &:visited {
-    color: #666;
+    color: #555;
   }
 
   &:hover {
@@ -47,6 +51,11 @@ div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
+
+  &.wrapable-text{
+    word-wrap:break-word;
+  }
+  
 }
 
 #notice {

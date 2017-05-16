@@ -1,0 +1,10 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="btn-group">
+      <% @tags.each do |option| %>
+        <%= link_to option.name, new_dog_path(tagId: option.id),class: "btn btn-sm btn-primary navbar-btn" %>
+      <% end %>
+      <%= button_tag("Quiero ayudar", type: 'button', class: "btn btn-sm btn-danger navbar-btn") %>
+    </div>
+  </div>
+</nav>

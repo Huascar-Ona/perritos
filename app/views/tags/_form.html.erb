@@ -1,8 +1,7 @@
-<%= form_for(tag) do |f| %>
+<%= simple_form_for tag, :html => {class: 'form-horizontal'}, wrapper: :horizontal_form, validate: true do |f| %>
   <% if tag.errors.any? %>
-    <div id="error_explanation">
+    <div class="row" id="error_explanation">
       <h2><%= pluralize(tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
-
       <ul>
       <% tag.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,8 +9,11 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="clearfix"></div>
+  <%= f.input :name %>
   <div class="actions">
-    <%= f.submit %>
+    <div class="col-xs-3 col-lg-9 col-lg-offset-5">
+      <%= f.button :submit, class: "btn btn-sm btn-primary center-block" %>
+    </div>
   </div>
 <% end %>

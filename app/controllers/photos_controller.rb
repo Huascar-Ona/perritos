@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :set_photo, only: [:edit, :update, :destroy]
 
   # GET /photos
   # GET /photos.json
@@ -15,6 +15,7 @@ class PhotosController < ApplicationController
   # GET /photos/new
   def new
     @photo = Photo.new
+    @dogId = params[:dogId]
   end
 
   # GET /photos/1/edit
@@ -24,15 +25,17 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = Photo.new(photo_params)
-
+    @photo = Photo.new(set_image_hash)
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render :show, status: :created, location: @photo }
+      #   # format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
+      #   # format.json { render :show, status: :created, location: @photo }
+      #   format.html { render json: [@photo.to_jq_upload].to_json, :content_type => 'text/html', :layout => false }
+      #format.json { render json: {files: [@photo.to_jq_upload]}, status: :created, location: @photo }
       else
-        format.html { render :new }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
+      #   # format.html { render :new }
+      #   # format.json { render json: @photo.errors, status: :unprocessable_entity }
+        format.json {render result: 'error', content_type: 'text/html'}
       end
     end
   end
@@ -67,9 +70,13 @@ class PhotosController < ApplicationController
       @photo = Photo.find(params[:id])
     end
 
+    def set_image_hash
+      image_attr = photo_params
+      {image: image_attr[:image][0], dog_id: image_attr[:dog_id]}
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      #params.fetch(:photo, {})
-      params.require(:photo).permit(:image)
+      params.require(:photo).permit(:dog_id, :image => [])
     end
 end
