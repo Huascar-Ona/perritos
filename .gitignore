@@ -24,3 +24,5 @@ db/development.rar
 config/initializers/simple_form_bootstrap.rar
 public/assets/avatars/
 public/assets/images/
+node_modules
+vendor/assets/

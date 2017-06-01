@@ -53,11 +53,23 @@ gem 'client_side_validations'
 #Plugin for client_side_validations and simple_form
 gem 'client_side_validations-simple_form'
 
-#gem jqeury-upload file this is used with paperclip to make multiple uploads.
-gem 'jquery-fileupload-rails'
-
 #gem pg for postgres as the database for Active Record
 gem 'pg'
+
+#Dropzone gem to upload multiple files with preview.
+gem 'dropzonejs-rails'
+
+#jquery-ui
+gem 'jquery-ui-rails'
+
+#lightbox2 image galery
+gem 'lightbox2-rails', '~> 2.8.2.1'
+
+source 'http://rails-assets.org' do
+  gem 'rails-assets-angular'
+  gem 'rails-assets-bootstrap'
+end
+
 
 group :development, :test do
   # # Call 'byebug' anywhere in the code to stop execution and get a debugger console
