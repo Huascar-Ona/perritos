@@ -9,7 +9,20 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ * 
+ *= require jquery-ui
+ *= require dropzone/dropzone
+ *= require lightbox
  *= require_tree .
  *= require_self
- */
+ *= require bootstrap
+ **/
+
+/*@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../assets/fonts/glyphicons-halflings-regular.eot');
+  src: url('../assets/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+       url('../assets/fonts/glyphicons-halflings-regular.woff') format('woff'), 
+       url('../assets/fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
+       url('../assets/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}*/
