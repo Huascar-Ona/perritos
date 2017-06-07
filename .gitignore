@@ -19,3 +19,10 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+app/models/models.rar
+db/development.rar
+config/initializers/simple_form_bootstrap.rar
+public/assets/avatars/
+public/assets/images/
+node_modules
+vendor/assets/

@@ -1,0 +1,12 @@
+<h1>New Photo</h1>
+
+<%= render 'form', photo: @photo %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    dropzoneLoad();
+  });
+
+</script>
+
+<%= link_to 'Back', photos_path %>

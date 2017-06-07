@@ -1,0 +1,27 @@
+{
+  "name": "perritos",
+  "description": "Perritos App",
+  "main": "index.js",
+  "authors": [
+    "Codigo Jade"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "perritos",
+    "facebook",
+    "app"
+  ],
+  "homepage": "https://github.com/Huascar-Ona/perritos/tree/josue",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -11,6 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
+//= require dropzone
+//= require lightbox
+//= require bootstrap
 //= require jquery_ujs
-//= require turbolinks
+//= require angular
 //= require_tree .
+//= require rails.validations.simple_form
