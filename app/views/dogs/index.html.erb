@@ -19,20 +19,22 @@
         <% end %>
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="btn-group">
-          <%= link_to  dog, class: "btn btn-default btn-xs", title: "See dog" do %>
-            <i class="glyphicon glyphicon-eye-open"></i>
-          <% end %>
-          <%= link_to  edit_dog_path(dog), class: "btn btn-default btn-xs", title: "Edit the dog" do %>
-            <i class="glyphicon glyphicon-pencil"></i>
-          <% end %>
-          <%= link_to  dog, method: :delete, data: { confirm: 'Do you want to delete ' + dog.name }, class: "btn btn-default btn-xs", title: "Erase dog" do %>
-            <i class="glyphicon glyphicon-trash"></i>
-          <% end %>
-          <%= link_to  new_photo_path(dogId: dog.id), class: "btn btn-default btn-xs" do %>
-            <i class="glyphicon glyphicon-camera"></i>
-          <% end %>
-        </div>
+        <center>
+          <div class="btn-group">
+            <%= link_to  dog, class: "btn btn-default btn-xs", title: "See dog" do %>
+              <i class="glyphicon glyphicon-eye-open"></i>
+            <% end %>
+            <%= link_to  edit_dog_path(dog), class: "btn btn-default btn-xs", title: "Edit the dog" do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+            <%= link_to  dog, method: :delete, data: { confirm: 'Do you want to delete ' + dog.name }, class: "btn btn-default btn-xs", title: "Erase dog" do %>
+              <i class="glyphicon glyphicon-trash"></i>
+            <% end %>
+            <%= link_to  new_photo_path(dogId: dog.id), class: "btn btn-default btn-xs" do %>
+              <i class="glyphicon glyphicon-camera"></i>
+            <% end %>
+          </div>
+        </center>
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

@@ -10,12 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require turbolinks
 //= require jquery
-//= require jquery-ui
-//= require dropzone
-//= require lightbox
 //= require bootstrap
-//= require jquery_ujs
+//= require jquery-ui
+//= require lightbox
+//= require dropzone
 //= require angular
+//= require ngInfiniteScroll
+//= require jquery_ujs
 //= require_tree .
+//= require rails.validations
 //= require rails.validations.simple_form
+//= require frontend

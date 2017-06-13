@@ -34,7 +34,41 @@
             <li><a href="#contactDog">Contacto</a></li>
           </ul>
           <div id="descriptionDog">
-            <%= @dog.description %>
+            <div class="row wrapable-text">
+              <%= @dog.description %>
+            </div>
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                Vaccines
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                <%= @dog.vaccines %>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                Raza
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                <%= @dog.race.name %>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                Edad
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                <%= @dog.age %>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                Sexo
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                <%= @dog.sex %>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                Tamaño
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                <%= @dog.size %>
+              </div>
+            </div>
           </div>
           <div id="galeryDog">
             <div class="row">

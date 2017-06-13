@@ -17,6 +17,7 @@ class DogsController < ApplicationController
     @dog = Dog.new
     @selectedTag = params[:tagId]
     @contact_id = current_user.uid
+    @dogSize = [['Small','S'],['Medium','M'],['Large','L']]
   end
 
   # GET /dogs/1/edit
@@ -94,6 +95,6 @@ class DogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params
-      params.require(:dog).permit(:name, :contact_id, :image, :tags, :tag_id, :latitude, :longitude, :description)
+      params.require(:dog).permit(:name, :contact_id, :image, :tags, :tag_id, :latitude, :longitude, :description, :sex, :age, :race_id, :size, :vaccines)
     end
 end
