@@ -68,10 +68,16 @@ gem 'lightbox2-rails', '~> 2.8.2.1'
 #kaminari, this gem help us with the pagination
 gem 'kaminari'
 
+#awesome fonts, additional to bootstrap's glyphicons
+gem 'font-awesome-rails'
+
 source 'http://rails-assets.org' do
   gem 'rails-assets-angular'
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-ngInfiniteScroll'
+  gem 'rails-assets-angular-google-maps'
+  gem 'rails-assets-lodash'
+  gem 'rails-assets-angular-simple-logger'
 end
 
 

@@ -12,6 +12,7 @@
 //
 //= require turbolinks
 //= require jquery
+
 //= require bootstrap
 //= require jquery-ui
 //= require lightbox
@@ -22,4 +23,7 @@
 //= require_tree .
 //= require rails.validations
 //= require rails.validations.simple_form
+//= require lodash
+//= require angular-simple-logger
+//= require angular-google-maps
 //= require frontend

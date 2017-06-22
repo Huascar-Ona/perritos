@@ -1,36 +1,31 @@
 <p id="notice"><%= notice %></p>
-<h1>My Dogs</h1>
-<div class="col-lg-12">
-  <%= link_to  new_dog_path, class: "btn btn-default", title: "Add new dog" do %>
-    <i class="glyphicon glyphicon-plus"></i>
-  <% end %>
-</div>
+<h1>Mis Perros</h1>
 <% @dogs.each do |dog| %>
   <div class="col-xs-6 col-sm-12 col-md-4 col-lg-4">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <%= link_to dog.name, dog, class: "btn btn-lg btn-link btn-block" %>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
         <% dog.photos.each do |photoDog| %>
           <% if photoDog.id == dog.avatar_id %>
             <%= image_tag photoDog.image.url(:thumb), alt: dog.name, class: 'img-responsive center-block img-circle' %>
           <% end %>
         <% end %>
       </div>
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-12">
         <center>
           <div class="btn-group">
-            <%= link_to  dog, class: "btn btn-default btn-xs", title: "See dog" do %>
+            <%= link_to  dog, class: "btn btn-default btn-xs", title: "Ver informacion" do %>
               <i class="glyphicon glyphicon-eye-open"></i>
             <% end %>
-            <%= link_to  edit_dog_path(dog), class: "btn btn-default btn-xs", title: "Edit the dog" do %>
+            <%= link_to  edit_dog_path(dog), class: "btn btn-default btn-xs", title: "Editar información" do %>
               <i class="glyphicon glyphicon-pencil"></i>
             <% end %>
-            <%= link_to  dog, method: :delete, data: { confirm: 'Do you want to delete ' + dog.name }, class: "btn btn-default btn-xs", title: "Erase dog" do %>
+            <%= link_to  dog, method: :delete, data: { confirm: 'Deseas borrar a ' + dog.name }, class: "btn btn-default btn-xs", title: "Borrar perro" do %>
               <i class="glyphicon glyphicon-trash"></i>
             <% end %>
-            <%= link_to  new_photo_path(dogId: dog.id), class: "btn btn-default btn-xs" do %>
+            <%= link_to  new_photo_path(dogId: dog.id), class: "btn btn-default btn-xs", title: "Agregar fotos" do %>
               <i class="glyphicon glyphicon-camera"></i>
             <% end %>
           </div>

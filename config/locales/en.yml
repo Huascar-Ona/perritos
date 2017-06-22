@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  # custom validation error messages
+  errors:
+    messages:
+      blank: "El campo es requerido."

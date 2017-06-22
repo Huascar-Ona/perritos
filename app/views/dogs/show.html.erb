@@ -1,7 +1,9 @@
 <div class="col-xs-12 col-lg-12">
-  <p id="notice" class="alert-success text-center">
-    <%= notice %>
-  </p>
+  <% if flash[:notice] %>
+    <p id="notice" class="alert alert-success text-center">
+      <%= notice %>
+    </p>
+  <% end %>
 </div>
 
 <div class="clearfix"></div>
@@ -29,9 +31,24 @@
       <div class="col-xs-12 col-sm-12 col-md-5 col-lg-12">
         <div id="dogInfo">
           <ul>
-            <li><a href="#descriptionDog">Acerca</a></li>
-            <li><a href="#galeryDog">Galeria</a></li>
-            <li><a href="#contactDog">Contacto</a></li>
+            <li>
+              <a href="#descriptionDog">
+                <%= fa_icon "info-circle" %>
+                Acerca 
+              </a>
+            </li>
+            <li>
+              <a href="#galeryDog">
+                <%= fa_icon "camera" %>
+                Fotos
+              </a>
+            </li>
+            <li>
+              <a href="#contactDog">
+                <%= fa_icon "user-circle-o" %>
+                Contacto
+              </a>
+            </li>
           </ul>
           <div id="descriptionDog">
             <div class="row wrapable-text">
@@ -39,7 +56,7 @@
             </div>
             <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-                Vaccines
+                Vacunas
               </div>
               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
                 <%= @dog.vaccines %>
@@ -72,7 +89,15 @@
           </div>
           <div id="galeryDog">
             <div class="row">
-              <div class="col-xs-12 col-lg-12">
+              <div class="panel panel-default">
+                <div class="clearfix">
+                  <%= link_to  new_photo_path(dogId: @dog.id), class: "btn btn-default pull-right" do %>
+                    <%= fa_icon "picture-o" %>
+                    Agregar foto
+                  <% end %>  
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <% @dog.photos.each do |photoDog| %>
                   <% if photoDog.id != @dog.avatar_id && photoDog.image.exists?(:thumb) %>
                     <div class="col-xs-6 col-lg-3">

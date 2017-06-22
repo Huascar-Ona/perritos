@@ -16,5 +16,5 @@
  *= require lightbox
  *= require_tree .
  *= require_self
- 
+ *= require font-awesome
  **/

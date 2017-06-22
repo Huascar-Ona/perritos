@@ -17,7 +17,8 @@ class DogsController < ApplicationController
     @dog = Dog.new
     @selectedTag = params[:tagId]
     @contact_id = current_user.uid
-    @dogSize = [['Small','S'],['Medium','M'],['Large','L']]
+    @dogSize = [['Pequeño','S'],['Mediano','M'],['Grande','L'], ['Extra Grande','X']]
+    @dogSex = [['Femenino','F'],['Masculino','M']]
   end
 
   # GET /dogs/1/edit

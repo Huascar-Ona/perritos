@@ -10,12 +10,11 @@
     </div>
   <% end %>
   <div class="clearfix"></div>
-  
-  <%= f.input :name, class: 'form-control' %>
+  <%= f.input :name, label: 'Nombre' %>
   <%= f.input :contact_id, as: :hidden, input_html: { value: @contact_id } %>
   <%= f.input :tag_id, as: :hidden, input_html: { value: @selectedTag} %>
-  <%= f.association :race, prompt: "Select the race of the dog" %>
-  <%= f.input :image, as: :file %>
+  <%= f.association :race, prompt: "Select the race of the dog", label: 'Raza' %>
+  <%= f.input :image, label: 'Foto', as: :file, class: 'btn-file' %>
   <div class="clearfix"></div>
   <div class="form-group">
     <% if !@dog.new_record? %>
@@ -27,18 +26,25 @@
     <% end %>
   </div>
   <div class="clearfix"></div>
-  <%= f.input :sex %>
-  <%= f.input :age %>
-  <%= f.input :size, collection: @dogSize, prompt: "Select the size of the dog" %>
-  <%= f.input :vaccines %>
+  <%= f.input :sex, collection: @dogSex, prompt: "Select the sex of the dog", label: 'Sexo' %>
+  <%= f.input :age, label: 'Edad' %>
+  <%= f.input :size, collection: @dogSize, prompt: "Select the size of the dog", label: 'Tamaño' %>
+  <%= f.input :vaccines, label: 'Vacunas' %>
+  <ui-gmap-google-map center="map.center" zoom='map.zoom'>
+    <ui-gmap-marker idKey="marker.id" coords="marker.coords" options="marker.options"></ui-gmap-marker>
+  </ui-gmap-google-map>
   <%= f.input :latitude %>
   <%= f.input :longitude %>
-  <%= f.input :description %>
+  <%= f.input :description, label: 'Descripcion' %>
 
   <div class="clearfix"></div>
   <div class="actions">
-    <div class="col-xs-3 col-lg-9 col-lg-offset-3">
-      <%= f.button :submit, class: "btn btn-sm btn-primary center-block" %>
+    <div class="btn-group pull-right">
+      <%= f.button :submit, 'Guardar', class: "btn btn-primary" %>
+      <% if !@dog.new_record? %>
+        <%= link_to 'Ver', @dog, class: 'btn btn-success' %>
+      <% end %>
+      <%= link_to 'Cancelar', dogs_path, class: 'btn btn-danger' %>
     </div>
   </div>
 <% end %>

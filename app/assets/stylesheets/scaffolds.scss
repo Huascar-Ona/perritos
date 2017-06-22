@@ -46,11 +46,6 @@ div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
-
-  &.wrapable-text{
-    word-wrap:break-word;
-  }
-  
 }
 
 #notice {
@@ -92,9 +87,15 @@ label {
   display: block;
 }
 
-.navbar .btn {
+.navbar .btn, .actions .btn-group a {
   &:visited{
     color: #FFF;
+  }
+}
+
+.navbar .btn-default {
+  &:visited{
+    color:#000;
   }
 }
 
@@ -118,4 +119,17 @@ label {
   background: white;
   cursor: inherit;
   display: block;
+}
+
+.error-message{
+  font-weigth: bold;
+}
+
+.wrapable-text{
+  word-wrap:break-word;
+}
+
+//Google Maps Style
+.angular-google-map-container{ 
+  height: 400px; 
 }
