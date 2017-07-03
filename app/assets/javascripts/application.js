@@ -18,6 +18,7 @@
 //= require lightbox
 //= require dropzone
 //= require angular
+//= require angular-route
 //= require ngInfiniteScroll
 //= require jquery_ujs
 //= require_tree .
@@ -26,4 +27,9 @@
 //= require lodash
 //= require angular-simple-logger
 //= require angular-google-maps
+//= require ngGeolocation
 //= require frontend
+
+$(document).on('turbolinks:load', function(){
+  google.maps.event.addDomListener(window, 'turbolinks:load');
+});

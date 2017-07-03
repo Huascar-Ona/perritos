@@ -78,6 +78,8 @@ source 'http://rails-assets.org' do
   gem 'rails-assets-angular-google-maps'
   gem 'rails-assets-lodash'
   gem 'rails-assets-angular-simple-logger'
+  gem 'rails-assets-ngGeolocation'
+  gem 'rails-assets-angular-route'
 end
 
 
