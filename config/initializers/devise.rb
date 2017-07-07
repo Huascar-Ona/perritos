@@ -273,6 +273,9 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   
   # Provider 
-  config.omniauth :facebook, "1934078213494774", "5954429f44b6c3b4d01d784f3787141f"
+  # Local
+  #config.omniauth :facebook, "1934078213494774", "5954429f44b6c3b4d01d784f3787141f"
+  #Heroku
+  config.omniauth :facebook, "1341638435890613", "6db18d332aeb6e4b3f2cd2dd33ef09da"
   #, :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
 end
