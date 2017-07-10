@@ -1,14 +1,13 @@
 app = angular.module('myApp', [ 'uiGmapgoogle-maps', 'ngGeolocation','ngRoute'])
-  .config ['$routeProvider','$httpProvider', '$http', ($routeProvider, $httpProvider, $http) ->
+  .config ['$routeProvider','$httpProvider', ($routeProvider, $httpProvider) ->
     
     $routeProvider.
       when '/dogs/new', {templateUrl: '', controller: 'GoogleMapController', controllerAs: 'gMapsCtrl'}
-      .when '/dogs/:id/edit', {templateUrl: ' ',  controller: 'GoogleMapController', controllerAs: 'gMapsCtrl'}
 
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
   ]
   #Controllers
-  .controller 'GoogleMapController', ['$geolocation', '$scope', '$http',  ($geolocation, $scope) ->
+  .controller 'GoogleMapController', ['$geolocation', '$scope', ($geolocation, $scope) ->
     angular.extend $scope, map:  
       center:
         latitude: 0
@@ -57,11 +56,4 @@ app = angular.module('myApp', [ 'uiGmapgoogle-maps', 'ngGeolocation','ngRoute'])
       return
     )
     return
-  ]
-  #Directives
-  .directive 'loadMarker', ['coords', '$http', (coords, $http) ->
-    @coords = {url:'/dogs/:id.json'}
-    $http.get(@coords.url).then (response) =>
-      console.log(@coords)
-      @repo = response.data
   ]
