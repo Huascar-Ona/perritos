@@ -10,12 +10,26 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require turbolinks
 //= require jquery
-//= require jquery-ui
-//= require dropzone
-//= require lightbox
+
 //= require bootstrap
-//= require jquery_ujs
+//= require jquery-ui
+//= require lightbox
+//= require dropzone
 //= require angular
+//= require angular-route
+//= require ngInfiniteScroll
+//= require jquery_ujs
 //= require_tree .
+//= require rails.validations
 //= require rails.validations.simple_form
+//= require lodash
+//= require angular-simple-logger
+//= require angular-google-maps
+//= require ngGeolocation
+//= require frontend
+
+$(document).on('turbolinks:load', function(){
+  google.maps.event.addDomListener(window, 'turbolinks:load');
+});

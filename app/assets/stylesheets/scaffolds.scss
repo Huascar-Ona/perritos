@@ -4,7 +4,6 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
 }
 
 p, ol, ul, td {
@@ -22,10 +21,6 @@ pre {
 
 a {
   color: #000;
-
-  nav div &:visited {
-    color: #FFF;
-  }
 
   &:visited {
     color: #555;
@@ -51,11 +46,6 @@ div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
-
-  &.wrapable-text{
-    word-wrap:break-word;
-  }
-  
 }
 
 #notice {
@@ -95,4 +85,51 @@ div {
 
 label {
   display: block;
+}
+
+.navbar .btn, .actions .btn-group a {
+  &:visited{
+    color: #FFF;
+  }
+}
+
+.navbar .btn-default {
+  &:visited{
+    color:#000;
+  }
+}
+
+//To use with the wrapper of simple form
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+.error-message{
+  font-weigth: bold;
+}
+
+.wrapable-text{
+  word-wrap:break-word;
+}
+
+//Google Maps Style
+.angular-google-map-container{ 
+  height: 400px; 
 }

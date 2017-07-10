@@ -5,4 +5,10 @@
 @initDogs = ->
   $('#dogInfo').tabs()
   return
-  
+@initDogsForm =->
+  $('#dog_age').spinner
+    min: 1,
+    max: 30,
+    classes: 
+      "ui-spinner":'form-control'
+  return
