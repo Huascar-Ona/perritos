@@ -26,3 +26,5 @@ public/assets/avatars/
 public/assets/images/
 node_modules
 vendor/assets/
+Procfile
+*.windows
