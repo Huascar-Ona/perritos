@@ -31,7 +31,6 @@
   <%= f.input :size, collection: @dogSize, prompt: "Select the size of the dog", label: 'Tamaño' %>
   <%= f.input :vaccines, label: 'Vacunas' %>
   <ui-gmap-google-map center="map.center" zoom='map.zoom' events="map.events"> 
-    <!-- <ui-gmap-marker ng-repeat="m in map.markers" idKey="m.id" coords="m.coords"></ui-gmap-marker> -->
     <ui-gmap-marker idKey="map.markers.id" coords="map.markers.coords"></ui-gmap-marker>
   </ui-gmap-google-map>
   <%= f.input :latitude, as: :hidden, input_html: {'ng-value': 'UserMarker.currentLatitude' }%> 

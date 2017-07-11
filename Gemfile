@@ -71,6 +71,10 @@ gem 'kaminari'
 #awesome fonts, additional to bootstrap's glyphicons
 gem 'font-awesome-rails'
 
+#Used to manage the issues with google maps and the turbolinks.
+gem 'jquery-turbolinks'
+
+#The assets that don't have a gem but it can be converted using rails-assets.org, generally used with bower.
 source 'http://rails-assets.org' do
   gem 'rails-assets-angular'
   gem 'rails-assets-bootstrap'

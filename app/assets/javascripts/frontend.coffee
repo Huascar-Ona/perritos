@@ -1,10 +1,17 @@
-app = angular.module('myApp', [ 'uiGmapgoogle-maps', 'ngGeolocation','ngRoute'])
-  .config ['$routeProvider','$httpProvider', ($routeProvider, $httpProvider) ->
+@app = angular.module('myApp', [ 'uiGmapgoogle-maps', 'ngGeolocation','ngRoute'])
+  .config ['$routeProvider','$httpProvider', 'uiGmapGoogleMapApiProvider', ($routeProvider, $httpProvider, uiGoogleMapApiProviders) ->
+    
+    uiGoogleMapApiProviders.configure {
+      key: 'AIzaSyDJoQ_NXGdOXF8-NnWTtY_AD5IC3Y-Uyr4'
+    }
     
     $routeProvider.
       when '/dogs/new', {templateUrl: '', controller: 'GoogleMapController', controllerAs: 'gMapsCtrl'}
 
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+
+    return
+
   ]
   #Controllers
   .controller 'GoogleMapController', ['$geolocation', '$scope', ($geolocation, $scope) ->

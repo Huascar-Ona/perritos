@@ -10,9 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require turbolinks
 //= require jquery
-
+//= require jquery.turbolinks
 //= require bootstrap
 //= require jquery-ui
 //= require lightbox
@@ -29,7 +28,16 @@
 //= require angular-google-maps
 //= require ngGeolocation
 //= require frontend
+//= require turbolinks
 
-$(document).on('turbolinks:load', function(){
-  google.maps.event.addDomListener(window, 'turbolinks:load');
-});
+// urlGMaps = '//maps.googleapis.com/maps/api/js';
+
+// //google.maps.event.addDomListener(window, 'load', initialize);
+
+// ready = function() {
+//   var script = document.createElement('script');
+//   script.type = 'text/javascript';
+//   script.src = urlGMaps;
+//   document.body.appendChild(script);
+// };
+
