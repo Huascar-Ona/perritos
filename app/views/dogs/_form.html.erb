@@ -26,9 +26,9 @@
     <% end %>
   </div>
   <div class="clearfix"></div>
-  <%= f.input :sex, collection: @dogSex, prompt: "Select the sex of the dog", label: 'Sexo' %>
+  <%= f.input :sex, collection: @dogSex, prompt: "Selecciona el sexo del perro", label: 'Sexo' %>
   <%= f.input :age, label: 'Edad' %>
-  <%= f.input :size, collection: @dogSize, prompt: "Select the size of the dog", label: 'Tamaño' %>
+  <%= f.input :size, collection: @dogSize, prompt: "Selecciona el tamaño del perro", label: 'Tamaño' %>
   <%= f.input :vaccines, label: 'Vacunas' %>
   <ui-gmap-google-map center="map.center" zoom='map.zoom' events="map.events"> 
     <ui-gmap-marker idKey="map.markers.id" coords="map.markers.coords"></ui-gmap-marker>
