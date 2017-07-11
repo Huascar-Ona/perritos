@@ -75,7 +75,7 @@ source 'http://rails-assets.org' do
   gem 'rails-assets-angular'
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-ngInfiniteScroll'
-  gem 'rails-assets-angular-google-maps'
+  gem 'rails-assets-angular-google-maps', '~> 2.3.1'
   gem 'rails-assets-lodash'
   gem 'rails-assets-angular-simple-logger'
   gem 'rails-assets-ngGeolocation'
