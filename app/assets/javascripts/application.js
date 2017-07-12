@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery.turbolinks
+//= require turbolinks
 //= require bootstrap
 //= require jquery-ui
 //= require lightbox
@@ -28,7 +29,7 @@
 //= require angular-google-maps
 //= require ngGeolocation
 //= require frontend
-//= require turbolinks
+
 
 // urlGMaps = '//maps.googleapis.com/maps/api/js';
 

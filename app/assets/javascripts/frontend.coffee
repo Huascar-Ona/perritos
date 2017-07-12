@@ -46,7 +46,7 @@
         $scope.map.center.longitude = position.coords.longitude
         $scope.map.markers =
           {
-            id:0
+            id:1
             coords: 
               latitude: position.coords.latitude
               longitude: position.coords.longitude
