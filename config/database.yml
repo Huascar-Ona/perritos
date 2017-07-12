@@ -16,3 +16,9 @@ development:
   database: perritos_development
   username: rails
   password: 1234567
+
+production:
+  <<: *default
+  database: perritos_production
+  username: rails
+  password: 1234567

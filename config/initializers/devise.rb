@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'ac6db251c6c3ae7936993841936b61dfc9f62656c3fdc13c0b4504b487b310f27742b6e8840ba74c95810d7134323d0376f5b7cf213d37f5dde86d0c700080c1'
+  config.secret_key = 'cecdf1e7aa8277ca01b2089eda2f2d65033f3fe5f77a99a0ff056d50f669faaecf15a18ee20f3dd29c5f9753830fb43d78c2b724cae6f8e72d03a9c56304c336'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -274,8 +274,8 @@ Devise.setup do |config|
   
   # Provider 
   # Local
-  # config.omniauth :facebook, "1934078213494774", "5954429f44b6c3b4d01d784f3787141f"
+  config.omniauth :facebook, "1934078213494774", "5954429f44b6c3b4d01d784f3787141f"
   #Heroku
-  config.omniauth :facebook, "1341638435890613", "6db18d332aeb6e4b3f2cd2dd33ef09da"
+  #config.omniauth :facebook, "1341638435890613", "6db18d332aeb6e4b3f2cd2dd33ef09da"
   #, :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
 end

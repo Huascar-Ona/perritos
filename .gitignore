@@ -28,3 +28,4 @@ node_modules
 vendor/assets/
 Procfile
 *.windows
+config/initializers/devise.rb
