@@ -52,11 +52,27 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-7.0.5-Q16'
+  #Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-7.0.5-Q16'
+  Paperclip.options[:command_path] = '/usr/bin/'
+
+  Paperclip::Attachment.default_options[:s3_host_name] = 's3.amazonaws.com'
+  Paperclip::Attachment.default_options[:url] = ':s3_host_name'
+  Paperclip::Attachment.default_options[:path] = '/:class/:attachment/:id/:style/:filename.:extension'
+  
 
   Paperclip.options[:content_type_mappings] = {
-  :jpg => "image/jpeg",
-  :png => "image/png",
-  :gif => "image/gif"
-}
+    :jpg => "image/jpeg",
+    :png => "image/png",
+    :gif => "image/gif"
+  }
+
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: Figaro.env.S3_BUCKET_NAME,
+      access_key_id: Figaro.env.AWS_ACCESS_KEY_ID,
+      secret_access_key: Figaro.env.AWS_SECRET_ACCESS_KEY,
+      s3_region: Figaro.env.AWS_REGION,
+    }
+  }
 end

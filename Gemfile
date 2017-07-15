@@ -74,6 +74,9 @@ gem 'font-awesome-rails'
 #Used to manage the issues with google maps and the turbolinks.
 gem 'jquery-turbolinks'
 
+#Figaro serves as a enviroment variable management
+gem 'figaro'
+
 #The assets that don't have a gem but it can be converted using rails-assets.org, generally used with bower.
 source 'http://rails-assets.org' do
   gem 'rails-assets-angular'
@@ -100,9 +103,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   #Use wdm (Windows Directory Monitor)
-  gem 'wdm'
+  gem 'wdm', platforms: [:mingw, :mswin, :x64_mingw]
   #Use certified gem to avoid problems with the ssl cert on localhost
-  gem 'certified' 
+  gem 'certified'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
