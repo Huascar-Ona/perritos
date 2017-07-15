@@ -77,6 +77,9 @@ gem 'jquery-turbolinks'
 #Figaro serves as a enviroment variable management
 gem 'figaro'
 
+#rmagick
+gem 'rmagick'
+
 #The assets that don't have a gem but it can be converted using rails-assets.org, generally used with bower.
 source 'http://rails-assets.org' do
   gem 'rails-assets-angular'
