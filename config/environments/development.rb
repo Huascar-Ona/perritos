@@ -53,7 +53,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   #Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-7.0.5-Q16'
-  Paperclip.options[:command_path] = '/usr/bin/'
+  Paperclip.options[:image_magick_path] = Figaro.env.heroku_imagemagick_path
 
   Paperclip::Attachment.default_options[:s3_host_name] = 's3.amazonaws.com'
   Paperclip::Attachment.default_options[:url] = ':s3_host_name'
