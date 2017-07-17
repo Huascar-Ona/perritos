@@ -84,6 +84,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  Paperclip.options[:command_path] = Figaro.env.heroku_imagemagick_path
+
   Paperclip::Attachment.default_options[:s3_host_name] = 's3.amazonaws.com'
   Paperclip::Attachment.default_options[:url] = ':s3_host_name'
   Paperclip::Attachment.default_options[:path] = '/:class/:attachment/:id/:style/:filename.:extension'
