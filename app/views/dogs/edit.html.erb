@@ -1,4 +1,4 @@
-<h1>Editar Información del Perro</h1>
+<h1>Editar información de <%= @dog.name %></h1>
 
 <%= render 'form', dog: @dog %>
 
@@ -6,6 +6,10 @@
 <script type="text/javascript">
   $(document).ready(function(){
     initDogsForm();
+  });
+  
+  $(document).on('turbolinks:load', function(){
+     angular.bootstrap(document.body, ['myApp'])
   });
 </script>
 

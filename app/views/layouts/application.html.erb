@@ -18,14 +18,14 @@
         <% if current_user.present? %>
           <%= yield %>  
         <% else %>
-          <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+          <%= link_to "Iniciar Sesion con Facebook", user_facebook_omniauth_authorize_path %>
         <% end %>
       </div>
     </section>
     <footer>
       <% if current_user.present? %>
         <div class="container">
-          <%= link_to destroy_user_session_path, method: :delete, class: 'pull-right', title: "Sign out" do %>
+          <%= link_to destroy_user_session_path, method: :delete, class: 'pull-right', title: "Cerrar Sesion" do %>
            <i class="glyphicon glyphicon-log-out"></i>
           <% end %>
         </div>

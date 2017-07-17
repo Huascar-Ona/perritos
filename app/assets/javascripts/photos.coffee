@@ -3,11 +3,13 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 @dropzoneLoad = ->
   dropzone = undefined
-  dropzone = undefined
-  Dropzone.autoDiscover = false
+  # Dropzone.autoDiscover = false
   dropzone = new Dropzone('.dropzone',
     maxFilesize: 3
     addRemoveLinks: true
+    dictDefaultMessage: 'Da click o arrastra las fotos que desees agregar'
+    dictRemoveFile: 'Quitar foto'
+    dictFileTooBig: 'La imagen es muy grande ({{filesize}}MB). El maximo permitido es: {{maxFilesize}}MB.'
     success: (file, response) ->
       $(file.previewTemplate).find('.dz-remove').attr 'id', response.fileID
       $(file.previewElement).addClass 'dz-success'

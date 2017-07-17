@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery.turbolinks
+//= require lightbox
 //= require turbolinks
 //= require bootstrap
 //= require jquery-ui
-//= require lightbox
 //= require dropzone
 //= require angular
 //= require angular-route
@@ -29,16 +29,3 @@
 //= require angular-google-maps
 //= require ngGeolocation
 //= require frontend
-
-
-// urlGMaps = '//maps.googleapis.com/maps/api/js';
-
-// //google.maps.event.addDomListener(window, 'load', initialize);
-
-// ready = function() {
-//   var script = document.createElement('script');
-//   script.type = 'text/javascript';
-//   script.src = urlGMaps;
-//   document.body.appendChild(script);
-// };
-

@@ -69,7 +69,7 @@ class DogsController < ApplicationController
   def update
     respond_to do |format|
       if @dog.update(dog_params)
-        format.html { redirect_to @dog, notice: 'Dog "' + @dog.name + '" was successfully updated.' }
+        format.html { redirect_to @dog, notice: 'Los datos de "' + @dog.name + '" se actualizaron correctamente.' }
         format.json { render :show, status: :ok, location: @dog }
       else
         format.html { render :edit }
@@ -83,7 +83,7 @@ class DogsController < ApplicationController
   def destroy
     @dog.destroy
     respond_to do |format|
-      format.html { redirect_to dogs_url, notice: 'Dog "' + @dog.name + '" was successfully erased.' }
+      format.html { redirect_to dogs_url, notice: 'Los datos de "' + @dog.name + ' han sido borrados correctamente.' }
       format.json { head :no_content }
     end
   end

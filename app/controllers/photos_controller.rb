@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:edit, :update, :destroy]
+  before_action :set_dog, only: [:new]
 
   # GET /photos
   # GET /photos.json
@@ -26,6 +27,7 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = Photo.new(photo_params)
+
     respond_to do |format|
       if @photo.save
         format.json { render json: { success: true, fileID: @photo.id  }, status: 200}
@@ -71,4 +73,8 @@ class PhotosController < ApplicationController
     def photo_params
       params.require(:photo).permit(:dog_id, :image)
     end
+
+    def set_dog
+      @dog = Dog.find(params[:dogId])
+    end 
 end
