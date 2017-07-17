@@ -6,4 +6,8 @@
   $(document).ready(function(){
     initDogsForm();
   });
+
+  $(document).on('turbolinks:load', function(){
+     angular.bootstrap(document.body, ['myApp'])
+  });
 </script>
