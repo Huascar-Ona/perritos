@@ -19,6 +19,7 @@
 //= require dropzone
 //= require angular
 //= require angular-route
+//= require frontend
 //= require ngInfiniteScroll
 //= require jquery_ujs
 //= require_tree .
@@ -28,4 +29,3 @@
 //= require angular-simple-logger
 //= require angular-google-maps
 //= require ngGeolocation
-//= require frontend

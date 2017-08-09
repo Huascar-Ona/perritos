@@ -23,8 +23,13 @@
     </div>
   <% end %>
   <div class="clearfix"></div>
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <%= paginate @dogs %>  
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-controller="IndexPerritosController">
+    <%= paginate @dogs %>
+    <%= @dogs.total_pages %>
+    <div infinite-scroll="paginationPerritos.nextPage()" infinite-scroll-distance="2000">
+      <img ng-repeat="item in paginationPerritos.items" ng-src='http://placehold.it/225x250&text={{item}}' />
+    </div>
+
   </div>
 <% else %>
   <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>

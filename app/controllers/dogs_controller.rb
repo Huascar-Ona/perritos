@@ -1,6 +1,6 @@
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
-
+  respond_to :html, :json, :text
   # GET /dogs
   # GET /dogs.json
   def index
@@ -10,6 +10,7 @@ class DogsController < ApplicationController
   # GET /dogs/1
   # GET /dogs/1.json
   def show
+    respond_with(@dog)
   end
 
   # GET /dogs/new
@@ -27,6 +28,7 @@ class DogsController < ApplicationController
     @dog.tags.each do |tag| 
       @selectedTag = tag.id 
     end 
+    respond_with(@dog)
   end
 
   # POST /dogs

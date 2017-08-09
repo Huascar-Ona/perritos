@@ -11,12 +11,12 @@ class Dog < ApplicationRecord
 
   #Validations
   validates  :name, presence: true
-  validates  :image, presence: true
+  validates  :image, presence: true, on: :create
   validates  :latitude, presence: true
   validates  :longitude, presence: true
   validates  :description, presence: true
 
   #kaminari config
-  paginates_per 1
+  paginates_per 6
   max_paginates_per 10
 end

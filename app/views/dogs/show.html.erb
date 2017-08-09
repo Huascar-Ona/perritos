@@ -132,9 +132,8 @@
 <script type="text/javascript">
   $(document).ready(function(){
     initDogs();
-  });
-  
-  $(document).on('turbolinks:load', function(){
-     angular.bootstrap(document.body, ['myApp'])
+  })
+  .on('turbolinks:load', function(){
+    angular.bootstrap(document.body, ['myApp'])
   });
 </script>

@@ -1,4 +1,4 @@
-<%= simple_form_for @dog, :html => {:multipart => true, class: 'form-vertical', 'ng-controller': "GoogleMapController"}, validate: true do |f| %>
+<%= simple_form_for @dog, :html => {:multipart => true, class: 'form-vertical', 'ng-controller': "GoogleMapController" }, validate: true do |f| %>
   <% if dog.errors.any? %>
     <div class="row" id="error_explanation">
       <h2><%= pluralize(dog.errors.count, "error") %> prohibited this dog from being saved:</h2>
@@ -10,13 +10,13 @@
     </div>
   <% end %>
   <div class="clearfix"></div>
-  <%= f.input :name, label: 'Nombre' %>
   <%= f.input :contact_id, as: :hidden, input_html: { value: @contact_id } %>
   <%= f.input :tag_id, as: :hidden, input_html: { value: @selectedTag} %>
+  <%= f.input :name, label: 'Nombre' %>
   <%= f.association :race, prompt: "Select the race of the dog", label: 'Raza' %>
   <div class="form-group">
     <% if !@dog.new_record? %>
-      <div class="col-xs-12 col-sm-12 col-lg-4">
+      <div class="col-xs-12 col-sm-12 col-lg-4" ng-init="dog_id=<%= @dog.id %>">
         <% @dog.photos.each do |avatar| %>
           <% if avatar.id == dog.avatar_id %>
             <%= image_tag avatar.image.url(:thumb), alt: @dog.name, class: "img-responsive center-block" %>
@@ -33,11 +33,11 @@
   <%= f.input :age, label: 'Edad' %>
   <%= f.input :size, collection: @dogSize, prompt: "Selecciona el tamaño del perro", label: 'Tamaño' %>
   <%= f.input :vaccines, label: 'Vacunas' %>
-  <ui-gmap-google-map center="map.center" zoom='map.zoom' events="map.events"> 
+  <ui-gmap-google-map center="map.center" zoom='map.zoom' events="map.events" id="maps"> 
     <ui-gmap-marker idKey="map.markers.id" coords="map.markers.coords"></ui-gmap-marker>
   </ui-gmap-google-map>
-  <%= f.input :latitude, as: :hidden, input_html: {'ng-value': 'UserMarker.currentLatitude' }%> 
-  <%= f.input :longitude, as: :hidden, input_html: {'ng-value': 'UserMarker.currentLongitude' }%>
+  <%= f.input :latitude, as: :hidden, input_html: {'ng-value': 'UserMarker.currentLatitude'} %> 
+  <%= f.input :longitude, as: :hidden, input_html: {'ng-value': 'UserMarker.currentLongitude'}%>
   <%= f.input :description, label: 'Descripcion' %>
   <div class="clearfix"></div>
   <div class="actions">
@@ -50,3 +50,4 @@
     </div>
   </div>
 <% end %>
+<%= javascript_include_tag 'perritos-app/application' %>
